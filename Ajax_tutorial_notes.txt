@@ -1,0 +1,152 @@
+Ajax -  Asynchronous JavaScript and XML.
+=========================================
+Ajax is a Client side web technique.
+make background server calls(asynchronous) for fetching addition data, 
+Updating some portion of a page like cric score,like etc.,
+without refreshing the whole page.
+
+
+process of exchanging data from a web server asynchronously through JavaScript, 
+without refreshing the page.
+
+data exchange format such as JSON, HTML, or plain text or xml
+
+https://www.tutorialrepublic.com/lib/images/ajax-illustration.png
+
+With/without AJAX Example:
+===============================
+
+Without Ajax, Whenever we want to access account, 
+we press login link. New login page open and enter username,
+ password, and login successfully. It's time consuming 
+process, inefficient for only small amount data(Login page) 
+exchange required.
+
+Now With Ajax, We want to access account, we press login 
+link. Background Javascript call to a server for fetching 
+login portion and update/add to current web page. Now we 
+can enter username, password and login successfully. It's 
+take small bit of time for this process.
+
+Benefits of Ajax:
+====================
+Using AJAX you can create better, faster, and more user-friendly web applications.
+
+Ajax is based on JavaScript, CSS, HTML and XML etc. So you can easily learn.
+
+Ajax behavior and works is like a desktop application. So Ajax use for 
+creating a rich web application.
+
+Speed
+------
+Reduce the server traffic in both side request. Also reducing the time 
+consuming on both side response.
+
+Interaction
+----------------
+AJAX is much responsive, whole page(small amount of) data transfer at a time.
+XMLHttpRequest
+----------------
+XMLHttpRequest has an important role in the Ajax web development technique. 
+XMLHttpRequest is special JavaScript object that was designed by Microsoft.
+XMLHttpRequest object call as a asynchronous HTTP request to the Server for 
+transferring data both side. It's used for making requests to the non-Ajax pages.
+
+Asynchronous calls
+----------------
+AJAX make asynchronous calls to a web server. This means client browsers are avoid waiting for all data arrive before start the rendering.
+
+Form Validation
+----------------
+This is the biggest advantage. Form are common element in web page. 
+Validation should be instant and properly, AJAX gives you all of that, and more.
+
+Bandwidth Usage
+----------------
+No require to completely reload page again.
+
+Disadvantages of AJAX??? find
+--------------------------------
+How AJAX works:
+==================
+https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2019/01/what-is-ajax-1-1024x503.jpg
+
+Sending Request and Retrieving the Response:
+=============================================
+
+Create a XMLHttpRequest Object :
+---------------------------------
+
+	var xhttp = new XMLHttpRequest();
+
+Properties of XMLHttpRequest object :
+--------------------------------------
+readystate is a property of the XMLHttpRequest Object which holds 
+the status of the XMLHttpRequest.
+
+0: request not initialized
+1: server connection established
+2: request received
+3: processing request
+4: request finished and response is ready
+
+```onreadystatechange``` is a property of the XMLHttpRequest Object which 
+defines a function
+ to be called when the readyState property changes.
+```status``` is a property of the XMLHttpRequest Object which returns 
+the status-number of a request
+
+200: "OK"
+403: "Forbidden"
+404: "Not Found"
+
+XMLHttpRequest Object Methods : 
+	To send a request to a Web Server, we use the open() and send() methods 
+	of the XMLHttpRequest object.
+
+xhttp.open("GET", "content.txt", true);
+xhttp.send();
+
+Create a function changeContent() using JavaScript :
+
+function changeContent() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("foo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.txt", true);
+  xhttp.send();
+}
+
+Example:
+==========
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="foo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="changeContent()">Change Content</button>
+</div>
+
+<script>
+function changeContent() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("foo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
+
