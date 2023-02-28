@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>jQuery Training jq24</title>
+    <link rel="Fav icon" href="images/favicon.ico" />
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <style>
+      .buttonClass {
+        background-color: #008cba; /* Blue */
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      div.dashed {
+        border-style: dashed;
+        border-color: blue;
+      }
+      label.dashed {
+        border-style: dashed;
+        border-color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+		
+        $("#btn1").click(function () {
+          $("div").append("<p>This is appended Paragraph inside Div");
+        });
+
+        $("#btn2").click(function () {
+          $("div").prepend("<p>This is prepended Paragraph inside Div");
+        });
+
+        $("#btn3").click(function () {
+          $("div").after("<p>This ia a new Paragraph After Div");
+        });
+
+        $("#btn4").click(function () {
+          $("div").before("<p>This ia a new Paragraph Before Div");
+        });
+
+        $("#btn5").click(function () {
+          $("table").append(
+            "<tr><td>Appended Data</td><td>Appended Data</td></tr>"
+          );
+        });
+
+        $("#btn6").click(function () {
+          $("select").append("<option value='UAE'>UAE</option>");
+        });
+      });
+    </script>
+
+    <hr />
+
+    <div class="dashed">
+      <label class="dashed">This is a label inside Div</label>
+    </div>
+
+    <hr />
+
+    <p>This is a paragraph</p>
+
+    <hr />
+    <table class="tblcls">
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+      <tr>
+        <td>Existing Data</td>
+        <td>Existing Data</td>
+      </tr>
+      <tr>
+        <td>Existing Data</td>
+        <td>Existing Data</td>
+      </tr>
+    </table>
+    <hr />
+    Country:
+    <select id="countries" multiple="multiple">
+      <option value="USA">USA</option>
+      <option value="India" selected>India</option>
+      <option value="UK">UK</option>
+    </select>
+    <br />
+    <br />
+    <input type="button" class="buttonClass" value="append" id="btn1" />
+    <input type="button" class="buttonClass" value="prepend" id="btn2" />
+    <br />
+    <br />
+    <input type="button" class="buttonClass" value="after" id="btn3" />
+    <input type="button" class="buttonClass" value="before" id="btn4" />
+    <br />
+    <br />
+    <input type="button" class="buttonClass" value="append Row" id="btn5" />
+    <input type="button" class="buttonClass" value="append Select" id="btn6" />
+  </body>
+</html>

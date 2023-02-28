@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>jQuery Training jq7</title>
+    <link rel="Fav icon" href="images/favicon.ico" />
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("#myspan").css({
+            color: "red",
+            "font-size": "150%",
+            "background-Color": "Aqua",
+          });
+        });
+      });
+    </script>
+    <p><span id="myspan">Clayfin </span></p>
+    <p><span id="myspan">Vayana </span></p>
+    <input type="button" value="Click" id="btn" />
+  </body>
+</html>

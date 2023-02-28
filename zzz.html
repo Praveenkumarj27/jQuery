@@ -1,0 +1,78 @@
+EACH:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        float: left;
+      }
+      li {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        float: left;
+        border: 2px solid blue;
+      }
+      button {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li id="i4">Stop</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+    <button onclick="fun()">Click me</button>
+    <h1></h1>
+
+    <script>
+      function fun() {
+        $(document).ready(function () {
+          $("li").each(function (index, element) {
+            $(element).css("background", "red");
+            if ($(this).is("#i4")) {
+              $("h1")
+                .text(
+                  "Index begins with 0. So, the function stopped at position: " +
+                    index
+                )
+                .css("fontSize", "20px");
+              return false;
+            }
+
+            // if (index === 3) {
+            //   $('h1')
+            //     .text(
+            //       'Index begins with 0. So, the function stopped at position: ' +
+            //         index
+            //     )
+            //     .css('fontSize', '20px');
+            //   return false;
+            // }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

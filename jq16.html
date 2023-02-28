@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>jQuery Training jq16</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+	<script
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		var PointsArray = [12, 14, 16, 20, 10, 8, 6, 4 , 2, 0];
+		
+		var PointsObject = {
+                'England': '12',
+                'Australia': '14',
+                'New Zealand': '16',
+                'India': '20',
+				'South Africa': '10',
+                'West Indies': '8',
+                'Pakistan': '6',
+                'Bangladesh': '4',
+				'SriLanka': '2',
+				'Afghanistan': '0',
+            };
+	
+		$('#btn1').click(function () {
+		
+			console.log("#########");
+			
+			$('li').each(function (index,element) {
+				console.log(index + ' : ' + $(element).text());
+			});
+			
+			console.log("#########");
+        });
+
+		$('#btn2').click(function () {
+		
+			console.log("#########");
+			
+			$.each(PointsArray, function (index, element) {
+               console.log(index + ' : ' + element);
+            });
+			
+			console.log("#########");
+        });		
+		
+		$('#btn3').click(function () {
+		
+			console.log("#########");
+			
+			$.each(PointsObject, function (index, element) {
+               console.log(index + ' : ' + element);
+            });
+			
+			console.log("#########");
+        });		
+
+		
+    });
+</script>
+
+	<p><b>ICC World Cup Teams 2019</b></p>
+	<ul>
+        <li>England</li>
+		<li>Australia</li>
+		<li>New Zealand</li>
+		<li>India</li>
+		<li>South Africa</li>
+		<li>West Indies</li>
+		<li>Pakistan</li>
+		<li>Bangladesh</li>
+		<li>SriLanka</li>
+		<li>Afghanistan</li>
+	</ul>
+	
+	 <input type="button" value=".each" id="btn1" />
+	 <input type="button" value="$.each Array" id="btn2" />
+	 <input type="button" value="$.each Object" id="btn3" />
+
+</body>
+</html>

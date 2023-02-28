@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>jQuery Training jq28</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<style>
+.buttonClass {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div.dashed {border-style: dashed;border-color: blue;}
+
+.container{
+        padding: 15px;
+		background: #f0e68c;
+        margin: 10px 0;
+        font-size: 24px;
+		border-style: dashed;
+		border-color: red;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		$("#t1" ).click(function() {
+			alert("Hi Clayfin");
+		});
+	
+		$('#btn1').click(function () {
+			$("#Div1").append($("#t1").clone()); 
+        });
+	
+        $('#btn2').click(function () {
+			$("#Div2").append($("#t1").clone(true)); 
+        });
+		
+		
+    });
+</script>
+		
+	  <input type="text" id="t1" value="Clayfin">
+	   <br/>
+	   <br/>
+	   <div id="Div1" class="dashed">
+        <p>This is Div1</p>
+	   </div>
+	  
+	   <div id="Div2" class="dashed">
+        <p>This is Div2</p>
+	   </div>
+	   
+	 
+	   <br/>
+	 
+	  
+	  <input type="button" class="buttonClass" value="clone" id="btn1" />
+	  <input type="button" class="buttonClass" value="clone(true)" id="btn2" />
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<head>
+	<title>jQuery Training jq23</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+	<script
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<style>
+.buttonClass {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		 $('#btn1').click(function () {
+			console.log($("#t1").text());    
+        });
+	
+        $('#btn2').click(function () {
+			$("#t1").text("Clayfin");    
+        });
+		
+		$('#btn3').click(function () {
+			console.log($("#t2").html());   
+        });
+   	
+	    $('#btn4').click(function () {
+			$("#t2").html("<b>Clayfin</b>");    
+        });
+		
+		$('#btn5').click(function () {
+			console.log($("#t3").val());
+        });
+		
+		$('#btn6').click(function () {
+			$("#t3").val("Clayfin");     
+        });
+		
+		$('#btn7').click(function () {
+			console.log($("[name='Type']:checked").val());
+        });
+		
+		$('#btn8').click(function () {
+			$("[name='Type']").val(["Public"]);     
+        });
+		
+		$('#btn9').click(function () {
+		 var vals = [];
+            $.each($("[name='skills']:checked"), function(){            
+                vals.push($(this).val());
+            });
+			console.log(vals.join(", "));
+        });
+		
+		$('#btn10').click(function () {
+			$("[name='skills']").val(["JavaScript" , "jQuery" , "Java"]);     
+        });
+		
+		$('#btn11').click(function () {
+			console.log($("#countries").val());
+        });
+		
+		$('#btn12').click(function () {
+			$("#countries").val(["India" , "UAE"]);     
+        });
+    });
+</script>
+
+	   <p id="t1"><i>Vayana</i></p>
+	   <p id="t2"><b>Vayana</b></p>
+
+	   <p>Text: <input type="text" id="t3" value="Vayana"></p>
+	   
+	    Type :
+		<input type="radio" name="Type" value="Public">Public
+		<input type="radio" name="Type" value="Private" checked="checked">Private
+		<input type="radio" name="Type" value="Partnership">Partnership
+		<br /><br />
+		Technology :
+		<input type="checkbox" name="skills" checked="checked"
+			   value="JavaScript" />JavaScript
+		<input type="checkbox" name="skills" 
+			   value="jQuery" />jQuery
+		<input type="checkbox" name="skills" 
+			   value="Java" />Java
+		<input type="checkbox" name="skills" value="C#" />C#
+		<br /><br />
+		Country:
+		    <select id="countries"  multiple="multiple">
+			<option value="USA">USA</option>
+			<option value="India" selected>India</option>
+			<option value="UK">UK</option>
+			<option value="UAE">UAE</option>
+		</select>
+		<br /><br />
+		
+	
+	  <input type="button" class="buttonClass" value="Get Text" id="btn1" />
+	  <input type="button" class="buttonClass" value="Set Text" id="btn2" />
+	  <br/>
+	  <br/>
+	  <input type="button" class="buttonClass" value="Get HTML" id="btn3" />
+	  <input type="button" class="buttonClass" value="Set HTML" id="btn4" />
+	  <br/>
+	  <br/>
+	  <input type="button" class="buttonClass" value="Get Val Text" id="btn5" />
+	  <input type="button" class="buttonClass" value="Set Val Text" id="btn6" />
+	  <br/>
+	  <br/>
+	  <input type="button" class="buttonClass" value="Get Val Radio" id="btn7" />
+	  <input type="button" class="buttonClass" value="Set Val Radio" id="btn8" />
+	  <br/>
+	  <br/>
+	  <input type="button" class="buttonClass" value="Get Val Checkbox" id="btn9" />
+	  <input type="button" class="buttonClass" value="Set Val Checkbox" id="btn10" />
+	  <br/>
+	  <br/>
+	  <input type="button" class="buttonClass" value="Get Val Select" id="btn11" />
+	  <input type="button" class="buttonClass" value="Set Val Select" id="btn12" />
+
+</body>
+</html>

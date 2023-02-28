@@ -1,0 +1,137 @@
+<html>
+<head>
+	<title>jQuery Training jq26</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+	<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<style>
+.buttonClass {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+div.dashed {border-style: dashed;border-color: blue;}
+label.dashed {border-style: dashed;border-color: red;}
+
+.custom {height:100px;width:300px;border:1px solid black;background-color:yellow;}
+
+
+#wrapper {
+display: flex;
+}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		$("#para_event1" ).click(function() {
+			alert('1');
+		});
+		
+		$("#para_event2" ).click(function() {
+			alert('2');
+		});
+	
+		$('#btn1').click(function () {
+			$("p b i").replaceWith("<p><b><i>This is a replaced Bold Italics Paragraph</i></b></p>");     
+        });
+	
+        $('#btn2').click(function () {
+			$("<p>This is a Replaced NEW Paragraph</p>").replaceAll("p");  
+        });
+		
+		$('#btn3').click(function () {
+			$("#div1").append(($('#div2').remove()));      
+        });
+   	
+	    $('#btn4').click(function () {
+			$("#div3").append(($('#div4').detach()));       
+        });
+		
+		$('#btn5').click(function () {
+			$("#div5").empty();       
+        });
+		
+		
+    });
+</script>
+
+	  <hr/>
+
+	  <div class="dashed">
+	  
+	  <p>This is a paragraph</p>
+	  
+	  <p><b>This is a BOLD paragraph</b></p>
+	  
+	  <p><b><i>This is a BOLD Italics paragraph<i></b></p>
+	  
+	  <p>This is a paragraph</p>
+	  
+	  <p><b>This is a BOLD paragraph</b></p>
+	  
+	  <p><b><i>This is a BOLD Italics paragraph<i></b></p>
+	  
+	  </div>
+	  <hr/>
+	  <div id="wrapper">
+		   <div id="div1" class="custom">
+			This is Div 1
+		   </div>
+		  <div id="div2" class="custom">
+			This is Div 2
+			<p id="para_event1">This is a paragraph in the div</p>
+			<p>This is another paragraph in the div</p>
+
+		   </div>
+		   <br/>
+		  
+	   
+	   </div>
+	   
+	   <br/>
+	   
+	  <div id="wrapper">
+	        <div id="div3" class="custom">
+			This is Div 3
+		   </div>
+			<div id="div4" class="custom">
+			This is Div 4
+			<p id="para_event2">This is a paragraph in the div</p>
+			<p>This is another paragraph in the div</p>
+
+		   </div>
+		   <br/>
+	  </div>
+	   <br/>
+	    <div id="div5" class="custom">
+		This is Div 5
+		This is some text in the div.
+		<p>This is a paragraph in the div</p>
+		<p>This is another paragraph in the div</p>
+
+	   </div>
+	   <br/>
+	 
+	  
+	  <input type="button" class="buttonClass" value="replaceWith" id="btn1" />
+	  <input type="button" class="buttonClass" value="replaceAll" id="btn2" />
+	  <input type="button" class="buttonClass" value="remove" id="btn3" />
+	  <input type="button" class="buttonClass" value="detach" id="btn4" />
+	  <input type="button" class="buttonClass" value="empty" id="btn5" />
+	 
+</body>
+</html>

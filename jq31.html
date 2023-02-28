@@ -1,0 +1,93 @@
+<html>
+<head>
+	<title>jQuery Training jq31</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+	<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<style>
+.buttonClass {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		$('#btn1').click(function () {
+			 $("#myDiv").prev().css({'border' : '3px solid red','backgroundColor' : 'blue'});
+        });
+		
+		$('#btn2').click(function () {
+			 $("#myDiv").next().css({'border' : '3px solid red','backgroundColor' : 'blue'});
+        });
+		
+		$('#btn3').click(function () {
+			 $("#innerDiv").parent().css({'border' : '3px solid red','backgroundColor' : 'blue'});
+        });
+		
+		$('#btn4').click(function () {
+			 $("#innerDiv").children().css({'border' : '3px solid red','backgroundColor' : 'blue'});
+        });
+		
+		$('#btn5').click(function () {
+			 $("#myDiv").siblings().css({'border' : '3px solid red','backgroundColor' : 'blue'});
+        });
+			
+    });
+</script>
+
+	<div> <p>This is the First Paragraph <p> </div>
+	
+	<div id="myDiv"> myDiv
+	
+	   <div id="innerDiv">  innerDiv
+		<p>This is the Second Paragraph </p>
+		<p></p>
+		<p><b>ICC World Cup Teams 2019</b></p>
+	     
+		<ul> 
+			<li class="first">England</li>
+			<li class="first">Australia</li>
+			<li class="first">New Zealand</li>
+			<li class="first">India</li>
+			<li class="first">South Africa</li>
+			<li class="second">West Indies</li>
+			<li class="second">Pakistan</li>
+			<li class="second">Bangladesh</li>
+			<li class="second">SriLanka</li>
+			<li class="second">Afghanistan</li>
+		</ul>
+	  </div>
+	  
+	  </div>
+		
+     <div> <p>This is the Third Paragraph <p> </div>
+	 
+	  <br/><br/>
+	 
+	  <input type="button" class="buttonClass" value="prev" id="btn1" />
+	  <input type="button" class="buttonClass" value="next" id="btn2" />
+	  <input type="button" class="buttonClass" value="parent" id="btn3" />
+	  <input type="button" class="buttonClass" value="children" id="btn4" />
+	  <input type="button" class="buttonClass" value="siblings" id="btn5" />
+	
+
+	 
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>jQuery Training jq29</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+	<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<style>
+.buttonClass {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		$('#btn1').click(function () {
+			 $("li").eq(3).css({'border' : '3px solid red','backgroundColor' : 'blue'});
+        });
+	
+        $('#btn2').click(function () {
+			$("li").filter(".first").css({'border' : '3px solid red','backgroundColor' : 'green'});
+        });
+		
+		$('#btn3').click(function () {
+			$("li").each(function () {
+				if ($(this).is(".second")) {
+                  $(this).css({'border' : '3px solid red','backgroundColor' : 'yellow'});
+			}
+		  });	
+        });
+		
+		$('#btn4').click(function () {
+			$("li").not(".second").css({'border' : '3px solid red','backgroundColor' : 'brown'});
+        });
+		$('#btn5').click(function () {
+			var l=$("li")
+			console.log(l)
+			// for(let i=0;i<l.length;i++)
+			// 	console.log(l[i])
+			l.each(function(index,element){
+				console.log($(this))
+				if ($(this).is(".second")) {
+				console.log('second')
+				$(this).css({'border' : '3px solid red','backgroundColor' : 'yellow'});
+				}
+				//console.log(index,element)
+			})
+        });
+    });
+</script>
+		
+	     <div>
+        <p><b>ICC World Cup Teams 2019</b></p>
+		<ul>
+			<li class="first">England</li>
+			<li class="first">Australia</li>
+			<li class="first">New Zealand</li>
+			<li class="first">India</li>
+			<li class="first">South Africa</li>
+			<li class="second">West Indies</li>
+			<li class="second">Pakistan</li>
+			<li class="second">Bangladesh</li>
+			<li class="second">SriLanka</li>
+			<li class="second">Afghanistan</li>
+		</ul>
+      </div>
+	 
+	   <br/><br/>
+	 
+	  <input type="button" class="buttonClass" value="eq" id="btn1" />
+	  <input type="button" class="buttonClass" value="filter" id="btn2" />
+	  <input type="button" class="buttonClass" value="is" id="btn3" />
+	  <input type="button" class="buttonClass" value="not" id="btn4" />
+	  <input type="button" class="buttonClass" value="not" id="btn5" />
+
+	 
+</body>
+</html>

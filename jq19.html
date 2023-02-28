@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>jQuery Training jq19</title>
+    <link rel="Fav icon" href="images/favicon.ico">
+	<script src= "js/jquery-1.12.4.min.js"></script>
+	<script
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+<style>
+.first {
+  color: blue;
+}
+.second {
+  color: red;
+}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+	
+		$('#btn1').click(function () {
+		
+			 $("li").filter(".first").css("font-size", "150%"); 
+        });
+		
+		$('#btn2').click(function () {
+		
+			 $("li").filter(function(index) {
+				if (index % 2 ===0) {
+					return true;
+				}
+				}).css({'border' : '3px solid red','backgroundColor' : 'brown'});
+        });
+		
+    });
+	
+</script>
+
+	<p><b>ICC World Cup Teams 2019</b></p>
+	<ul>
+        <li class="first">England</li>
+		<li class="first">Australia</li>
+		<li class="first">New Zealand</li>
+		<li class="first">India</li>
+		<li class="first">South Africa</li>
+		<li class="second">West Indies</li>
+		<li class="second">Pakistan</li>
+		<li class="second">Bangladesh</li>
+		<li class="second">SriLanka</li>
+		<li class="second">Afghanistan</li>
+	</ul>
+	
+	 <input type="button" value="Filter 1" id="btn1" />
+	 <input type="button" value="Filter 2" id="btn2" />
+	
+</body>
+</html>
